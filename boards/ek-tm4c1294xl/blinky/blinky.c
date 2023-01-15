@@ -40,10 +40,11 @@
 // Blink the on-board LED.
 //
 //*****************************************************************************
-int
-main(void)
+int main(void)
 {
     volatile uint32_t ui32Loop;
+    volatile uint32_t valor;
+
 
     //
     // Enable the GPIO port that is used for the on-board LED.
@@ -59,35 +60,36 @@ main(void)
     // Enable the GPIO pin for the LED (PN0).  Set the direction as output, and
     // enable the GPIO pin for digital function.
     //
-    GPIO_PORTN_DIR_R = 0x01;
-    GPIO_PORTN_DEN_R = 0x01;
+    GPIO_PORTN_DIR_R = 0x01 | 0x02 | 0x04; //puerto N como salida en el pin(encender el 2,4 y 8)
+    GPIO_PORTN_DEN_R = 0x01 | 0x02 |0x04; //habilitar los pines 
 
     //
     // Loop forever.
     //
+        valor=160000;
     while(1)
     {
         //
         // Turn on the LED.
         //
-        GPIO_PORTN_DATA_R |= 0x01;
+        GPIO_PORTN_DATA_R |= 0x01 | 0x02 | 0x04;
 
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < valor; ui32Loop++)
         {
         }
 
         //
         // Turn off the LED.
         //
-        GPIO_PORTN_DATA_R &= ~(0x01);
+        GPIO_PORTN_DATA_R &= ~(0x01 | 0x02 | 0x04); //
 
         //
         // Delay for a bit.
         //
-        for(ui32Loop = 0; ui32Loop < 200000; ui32Loop++)
+        for(ui32Loop = 0; ui32Loop < valor; ui32Loop++)
         {
         }
     }

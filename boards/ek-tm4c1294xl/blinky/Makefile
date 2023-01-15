@@ -41,7 +41,12 @@ include ${ROOT}/makedefs
 # Where to find header files that do not live in the source directory.
 #
 IPATH=../../..
-
+#
+#reglas de reconstrucción 
+#
+debug: CFLAGS+=-g -D DEBUG
+debug: ${COMPILER}
+debug: ${COMPILER}/blinky.axf
 #
 # The default rule, which causes the blinky example to be built.
 #
