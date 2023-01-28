@@ -13,7 +13,7 @@
             "targetArchitecture":"arm",
             "filterStderr":true,
             "serverStarted": "Info\\ : \\ [\\w\\d\\.]*:\\hardware",
-            "program": "C:\\Users\\Admin\\Documents\\Micro\\tiva-c\\boards\\ek-tm4c1294xl\\blinky\\gcc\\blinky.axf",
+            "program": "C:\\Users\\Admin\\Documents\\Micro\\tiva-c\\boards\\ek-tm4c1294xl\\blinky\\gcc\\practica_8.axf",
             "args": [],
             "stopAtEntry":false,
             "cwd": "${workspaceRoot}", 
@@ -23,7 +23,7 @@
             "setupCommands": [
                 {"text": "target extended-remote :3333"},
                 {"text": "monitor halt"},
-                {"text": "load C:/Users/Admin/Documents/Micro/tiva-c/boards/ek-tm4c1294xl/blinky/gcc/blinky.axf "}
+                {"text": "load C:/Users/Admin/Documents/Micro/tiva-c/boards/ek-tm4c1294xl/blinky/gcc/practica_8.axf "}
             ]
         }
     ]

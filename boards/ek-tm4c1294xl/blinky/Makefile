@@ -46,12 +46,12 @@ IPATH=../../..
 #
 debug: CFLAGS+=-g -D DEBUG
 debug: ${COMPILER}
-debug: ${COMPILER}/blinky.axf
+debug: ${COMPILER}/practica_8.axf
 #
 # The default rule, which causes the blinky example to be built.
 #
 all: ${COMPILER}
-all: ${COMPILER}/blinky.axf
+all: ${COMPILER}/practica_8.axf
 
 #
 # The rule to clean out all the build products.
@@ -68,10 +68,10 @@ ${COMPILER}:
 #
 # Rules for building the blinky example.
 #
-${COMPILER}/blinky.axf: ${COMPILER}/blinky.o
-${COMPILER}/blinky.axf: ${COMPILER}/startup_${COMPILER}.o
-${COMPILER}/blinky.axf: blinky.ld
-SCATTERgcc_blinky=blinky.ld
+${COMPILER}/practica_8.axf: ${COMPILER}/practica_8.o
+${COMPILER}/practica_8.axf: ${COMPILER}/startup_${COMPILER}.o
+${COMPILER}/practica_8.axf: practica_8.ld
+SCATTERgcc_practica_8=practica_8.ld
 ENTRY_blinky=ResetISR
 
 #
